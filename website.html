@@ -6,243 +6,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Website</title>
   <style>
-  :root {
-    --background: #ffffff; /* White background */
-    --foreground: #002b5c; /* Dark blue text */
-    --accent-light: #e6f0ff; /* Light blue background */
-    --accent-medium: #007BFF; /* Medium blue links/keywords */
-    --accent-dark: #004080; /* Darker blue tones */
-    --comment: #6c757d; /* Muted gray for comments */
-    --button-bg: #004080; /* Blue button */
-    --button-hover-bg: #003366; /* Darker blue button on hover */
-    --button-text: #ffffff; /* Button text color */
-  }
+    :root {
+      --background: #ffffff;
+      --foreground: #002b5c;
+      --accent-light: #e6f0ff;
+      --accent-medium: #007BFF;
+      --accent-dark: #004080;
+      --comment: #6c757d;
+      --button-bg: #004080;
+      --button-hover-bg: #003366;
+      --button-text: #ffffff;
+    }
 
-  html {
-    line-height: 1.5;
-    font-family: Georgia, serif;
-    font-size: 20px;
-    color: var(--foreground);
-    background-color: var(--background);
-  }
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: var(--foreground);
+      background-color: var(--background);
+    }
 
-  body {
-    margin: 0 auto;
-    max-width: 36em;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    hyphens: auto;
-    word-wrap: break-word;
-    text-rendering: optimizeLegibility;
-    font-kerning: normal;
-  }
-
-  @media (max-width: 600px) {
     body {
-      font-size: 0.9em;
-      padding: 1em;
+      margin: 0 auto;
+      max-width: 36em;
+      padding: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
     }
-  }
 
-  @media print {
-    body {
-      background-color: transparent;
-      color: black;
-      font-size: 12pt;
+    header {
+      margin-bottom: 4em;
+      text-align: center;
     }
-    p, h2, h3 {
-      orphans: 3;
-      widows: 3;
+
+    h1 {
+      margin-top: 0; /* Ensures even vertical alignment across pages */
     }
-    h2, h3, h4 {
-      page-break-after: avoid;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--foreground);
+      margin-top: 1.4em;
     }
-  }
 
-  p {
-    margin: 1em 0;
-    color: var(--foreground);
-  }
+    p {
+      margin: 1em 0;
+    }
 
-  a {
-    color: var(--accent-medium);
-  }
+    a {
+      color: var(--accent-medium);
+      text-decoration: none;
+    }
 
-  a:visited {
-    color: var(--accent-medium);
-  }
+    a:hover {
+      text-decoration: underline;
+      color: var(--accent-dark);
+    }
 
-  a:hover {
-    color: var(--accent-dark);
-  }
+    a.button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 1rem;
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
 
-  img {
-    max-width: 100%;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.4em;
-    color: var(--foreground);
-  }
-
-  h5, h6 {
-    font-size: 1em;
-    font-style: italic;
-  }
-
-  h6 {
-    font-weight: normal;
-  }
-
-  ol, ul {
-    padding-left: 1.7em;
-    margin-top: 1em;
-  }
-
-  li > ol, li > ul {
-    margin-top: 0;
-  }
-
-  blockquote {
-    margin: 1em 0 1em 1.7em;
-    padding-left: 1em;
-    border-left: 2px solid var(--accent-light);
-    color: var(--comment);
-  }
-
-  code {
-    font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-    font-size: 85%;
-    margin: 0;
-    color: var(--accent-medium);
-  }
-
-  pre {
-    margin: 1em 0;
-    overflow: auto;
-    background-color: var(--accent-light);
-  }
-
-  pre code {
-    padding: 0;
-    overflow: visible;
-  }
-
-  .sourceCode {
-    background-color: transparent;
-    overflow: visible;
-  }
-
-  hr {
-    background-color: var(--accent-medium);
-    border: none;
-    height: 1px;
-    margin: 1em 0;
-  }
-
-  table {
-    margin: 1em 0;
-    border-collapse: collapse;
-    width: 100%;
-    overflow-x: auto;
-    display: block;
-    font-variant-numeric: lining-nums tabular-nums;
-  }
-
-  table caption {
-    margin-bottom: 0.75em;
-    color: var(--foreground);
-  }
-
-  tbody {
-    margin-top: 0.5em;
-    border-top: 1px solid var(--accent-medium);
-    border-bottom: 1px solid var(--accent-medium);
-  }
-
-  th {
-    border-top: 1px solid var(--accent-medium);
-    padding: 0.25em 0.5em 0.25em 0.5em;
-    color: var(--foreground);
-  }
-
-  td {
-    padding: 0.125em 0.5em 0.25em 0.5em;
-    color: var(--foreground);
-  }
-
-  header {
-    margin-bottom: 4em;
-    text-align: center;
-  }
-
-  #TOC li {
-    list-style: none;
-  }
-
-  #TOC a:not(:hover) {
-    text-decoration: none;
-    color: var(--accent-medium);
-  }
-
-  code {
-    white-space: pre-wrap;
-  }
-
-  span.smallcaps {
-    font-variant: small-caps;
-  }
-
-  span.underline {
-    text-decoration: underline;
-  }
-
-  div.column {
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
-  }
-
-  div.hanging-indent {
-    margin-left: 1.5em;
-    text-indent: -1.5em;
-  }
-
-  ul.task-list {
-    list-style: none;
-  }
-
-  .display.math {
-    display: block;
-    text-align: center;
-    margin: 0.5rem auto;
-  }
-  a.button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 20px;
-  font-size: 1rem;
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-a.button:hover {
-  background-color: var(--button-hover-bg);
-}
-
-</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+    a.button:hover {
+      background-color: var(--button-hover-bg);
+    }
+  </style>
 </head>
+
 <body>
 <!-- Title for the page -->
-<h1>Website: Understanding Synthetic Data</h1>
+  <header>
+    <h1>Website: Understanding Synthetic Data</h1>
+  </header>
 <p><a class="button" href="https://claude.site/artifacts/6fed17d2-d4ca-49c2-9249-d985daef0bc4" target="_blank" rel="noopener noreferrer">
     🔗 View Website
   </a></p>
