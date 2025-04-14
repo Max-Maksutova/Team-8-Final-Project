@@ -29,7 +29,7 @@ This project explores the **generation of synthetic data for enterprise applicat
 
 Our primary dataset examples center around **financial services and synthetic equity markets**, drawing from publicly available resources and research by **J.P. Morgan AI Research** and **Gretel.ai**.
 
-In addition, we used **vibe coding** (ie. prompting an AI to write and execute the creation of code) to build an interactive website on the subject of synthetic data  
+In addition, we used **vibe coding** (ie. prompting an AI to write and execute the creation of code) to build an [interactive website]( on the subject of synthetic data.  
 
 ---
 
