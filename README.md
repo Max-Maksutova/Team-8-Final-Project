@@ -16,7 +16,7 @@ Synthetic data is revolutionizing the way businesses handle data privacy, model 
 - [Max Maksutova](https://github.com/Max-Maksutova/Introduction/blob/main/README.md)  
 - [Mollie Schuma](https://github.com/mfschuma/About-Me-)  
 - [Nicole Sellers](https://github.com/nlsellers/Introduction)  
-- [Sarah Wozniak](https://github.com/danarepo)  
+- [Sarah Wozniak](https://github.com/sdwozniak) 
 
 ---
 
