@@ -5,6 +5,7 @@ AI used: Claude
 Prompt: "Build me an interactive website about synthetic data please for my AI final project!"
 
 Website Code Provided by Claude: 
+```{html}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -804,5 +805,5 @@ Website Code Provided by Claude:
     </script>
 </body>
 </html>
-
+```
 
