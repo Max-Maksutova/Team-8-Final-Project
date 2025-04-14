@@ -147,6 +147,8 @@ print(synthetic_data.head())
 # Optional: Save to CSV
 synthetic_data.to_csv('enhanced_synthetic_customer_data.csv', index=False)
 ```
+**Example Output**
+
 
 ---
 
