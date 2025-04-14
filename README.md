@@ -30,6 +30,8 @@ This project explores the **generation of synthetic data for enterprise applicat
 
 Our primary dataset examples center around **financial services and synthetic equity markets**, drawing from publicly available resources and research by **J.P. Morgan AI Research** and **Gretel.ai**.
 
+In addition, we used **vibe coding** (ie. prompting an AI to write and execute the creation of code) to build an interactive website on the subject of synthetic data  
+
 ---
 
 ## 🔍 Project Details
@@ -37,9 +39,10 @@ Our primary dataset examples center around **financial services and synthetic eq
 ### 📊 What is Synthetic Data?
 
 Artificially generated data that mimics the statistical properties of real data, used to replace or augment real-world datasets.
+![exSyntheticData](https://dataingovernment.blog.gov.uk/wp-content/uploads/sites/46/2020/08/synthetic_data_image-1536x718.png)
 
 **Why is it important for businesses?**
-- Real data is often sensitive, limited, or inaccessible
+- Real data is often sensitive, limited, or inaccessible.
 - Synthetic data enables:
   - Faster AI development
   - Cross-team collaboration without compliance risk
@@ -72,32 +75,78 @@ Encodes real data into low-dimensional space and decodes to reconstruct similar 
 ##### **GAN (Generative Adversarial Network)**  
 Two networks: generator vs. discriminator. Generator improves to fool the discriminator, leading to realistic outputs.
 
-![GAN Diagram](link-to-gan-image)
+![GAN Diagram](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Y_AGVp0EEGEpB1Q25G6edQ.jpeg)
 
 ##### **LLM (Large Language Model)**  
 Used for generating synthetic text data. Trained on large corpora to replicate real-world linguistic structures.
 
-![LLM Diagram](link-to-llm-image)
+![LLM Diagram](https://thegradient.pub/content/images/2023/07/llm_first_diagram.png)
 
----
+#### 3. Create & Compare 
+Generate synthetic data using your generator of choice. Then, analyze & compare metrics between your original data and the synthetic data. 
 
-### 🏗️ Generation Process
-
-1. **Compute metrics for real data**  
-2. **Train the generator**  
-3. **Generate synthetic data**  
-4. **Compute metrics for synthetic data**  
-5. **Compare and refine**
-
-![Data Generation Pipeline](link-to-pipeline-image)
-
-#### Refinement Goals:
+#### 4. Refine Generator
 - **Avoid Overfitting**:  
-  > Avoid duplicating real data  
+  > Avoid duplicating real data 
 - **Avoid Underfitting**:  
   > Ensure synthetic data reflects realistic variety
 
-![Overfitting vs Underfitting](link-to-over-under-fitting-image)
+![Overfitting vs Underfitting](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*xmtcfLquAbwFjvuN)
+
+---
+
+### Example Code for a Synthetic Data Generator in Python 
+
+The following code generates simple synthetic customer data by calling on a pre-established synthetic data library called Faker. 
+
+```{python}
+import random
+import pandas as pd
+import numpy as np
+from faker import Faker
+
+# Initialize the Faker library
+fake = Faker()
+
+# Set seeds for reproducibility
+random.seed(42)
+np.random.seed(42)
+
+# Number of synthetic records
+num_records = 1000
+
+# Function to generate more realistic synthetic customer data
+def generate_data(n):
+    data = []
+    for _ in range(n):
+        name = fake.name()  # Generate full name
+        email = fake.email()  # Generate fake email address
+        phone = fake.phone_number()  # Generate fake phone number
+        city = fake.city()  # Generate random city
+        state = fake.state()  # Generate random U.S. state
+        age = random.randint(18, 70)  # Random age
+        gender = random.choice(['Male', 'Female', 'Non-binary'])  # Random gender
+        income = round(np.random.normal(60000, 15000), 2)  # Normal distribution for annual income
+        product_interest = random.choice(['Fitness', 'Tech', 'Travel', 'Fashion', 'Home Decor', 'Beauty'])  # Random interest category
+        purchased = np.random.choice([0, 1], p=[0.7, 0.3])  # 30% chance of having purchased
+        data.append([name, email, phone, city, state, age, gender, income, product_interest, purchased])
+    return data
+
+# Define column names
+columns = [
+    'Name', 'Email', 'Phone', 'City', 'State', 
+    'Age', 'Gender', 'Annual_Income', 'Product_Interest', 'Purchased'
+]
+
+# Generate and store the data in a DataFrame
+synthetic_data = pd.DataFrame(generate_data(num_records), columns=columns)
+
+# Preview the first few rows
+print(synthetic_data.head())
+
+# Optional: Save to CSV
+synthetic_data.to_csv('enhanced_synthetic_customer_data.csv', index=False)
+```
 
 ---
 
@@ -106,19 +155,19 @@ Used for generating synthetic text data. Trained on large corpora to replicate r
 #### 🔐 Anti-Money Laundering (J.P. Morgan)  
 Synthetic sequences of banking actions (e.g., account opening, transfers, purchases)
 
-![AML Dataset Visual](link-to-aml-image)
+![AML Dataset Visual](https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/antimoney-laundering-data.png)
 
 #### 📈 Synthetic Equity Market Data  
 Simulated spot and option prices  
 - Based on Bloomberg market data  
 - Reconstructed using deep learning models
 
-![Market Dataset Visual](link-to-equity-image)
+![Market Dataset Visual](https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/synthetic-equity.JPG)
 
 #### 🧾 Customer Journey Events  
 Sequences of retail banking actions like ATM withdrawals and app usage
 
-![Customer Journey Image](link-to-customer-journey-image)
+![Customer Journey Image](https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/customer-journey-event-data.png)
 
 #### 🤖 Gretel.ai Use Cases:
 - **Synthetic Customer Profiles**
@@ -127,7 +176,7 @@ Sequences of retail banking actions like ATM withdrawals and app usage
 - **Time-Series Sensor Data**
 - **Synthetic Chat Conversations**
 
-![Gretel Data Samples](link-to-gretel-samples)
+![Gretel Data Samples](https://cdn.prod.website-files.com/5ec4696a9b6d337d51632638/641c5aa0be3d60b7e1f76761_RelationalDB.webp)
 
 ---
 
@@ -150,33 +199,53 @@ Sequences of retail banking actions like ATM withdrawals and app usage
 ---
 
 ## 📚 References
-### Research
 
-1. **J.P. Morgan AI Research - Synthetic Data for Financial Services**  
-   [https://www.jpmorgan.com/technology/artificial-intelligence/synthetic-data](https://www.jpmorgan.com/technology/artificial-intelligence/synthetic-data)
+**1. ArXiv - Synthetic Data in Machine Learning**  
+- Research Paper: [https://arxiv.org/pdf/2205.03257](https://arxiv.org/pdf/2205.03257)
 
-2. **Gretel.ai: The Synthetic Data Platform**  
-   [https://gretel.ai](https://gretel.ai)
+**2. IBM - Variational Autoencoders**  
+- Research: [https://www.ibm.com/think/topics/variational-autoencoder](https://www.ibm.com/think/topics/variational-autoencoder)  
+- Image Reference: [IBM VAE Image](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/b6/f4/variational-autoencoder-neural-network.png)
 
-3. **[Research Paper]**  
-   *Title:* “Synthetic Data: Opening the Gates to Privacy-Preserving AI”  
-   *Authors:* Lokhov, Andrei et al.  
-   *Published:* 2022  
-   *arXiv:* [2205.03257](https://arxiv.org/abs/2205.03257)
+**3. Medium - Packt - GAN Architecture**  
+- Research: [https://medium.com/@Packt_Pub/inside-the-generative-adversarial-networks-gan-architecture-2435afbd6b3b](https://medium.com/@Packt_Pub/inside-the-generative-adversarial-networks-gan-architecture-2435afbd6b3b)  
+- Image Reference: [GAN Architecture Image](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Y_AGVp0EEGEpB1Q25G6edQ.jpeg)
 
-### Images
+**4. UK Government - Synthetic Data for ML**  
+- Research: [https://dataingovernment.blog.gov.uk/2020/08/20/synthetic-data-unlocking-the-power-of-data-and-skills-for-machine-learning/](https://dataingovernment.blog.gov.uk/2020/08/20/synthetic-data-unlocking-the-power-of-data-and-skills-for-machine-learning/)  
+- Image Reference: [UK Gov Synthetic Data Image](https://dataingovernment.blog.gov.uk/wp-content/uploads/sites/46/2020/08/synthetic_data_image-1536x718.png)
 
-1. **J.P. Morgan AI Research - Synthetic Data for Financial Services**  
-   [https://www.jpmorgan.com/technology/artificial-intelligence/synthetic-data](https://www.jpmorgan.com/technology/artificial-intelligence/synthetic-data)
+**5. Regression Visualization**  
+- Image Reference Only: [Regression Plot Image](https://dmol.pub/_images/regression_17_0.png)
 
-2. **Gretel.ai: The Synthetic Data Platform**  
-   [https://gretel.ai](https://gretel.ai)
+**6. Medium - Underfitting vs. Overfitting**  
+- Research: [https://medium.com/@maheshhkanagavell/understanding-underfitting-and-overfitting-in-data-science-a-comprehensive-guide-with-real-time-b97a5c057779](https://medium.com/@maheshhkanagavell/understanding-underfitting-and-overfitting-in-data-science-a-comprehensive-guide-with-real-time-b97a5c057779)  
+- Image Reference: [Under/Overfitting Image](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*xmtcfLquAbwFjvuN)
 
-3. **[Research Paper]**  
-   *Title:* “Synthetic Data: Opening the Gates to Privacy-Preserving AI”  
-   *Authors:* Lokhov, Andrei et al.  
-   *Published:* 2022  
-   *arXiv:* [2205.03257](https://arxiv.org/abs/2205.03257)
+**7. JPMorgan - Synthetic Data for Anti-Money Laundering**  
+- Research: [https://www.jpmorgan.com/technology/artificial-intelligence/initiatives/synthetic-data/anti-money-laundering](https://www.jpmorgan.com/technology/artificial-intelligence/initiatives/synthetic-data/anti-money-laundering)  
+- Image Reference: [AML Data Image](https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/antimoney-laundering-data.png)
+
+**8. O'Reilly - Practical Synthetic Data**  
+- Research: [https://www.oreilly.com/library/view/practical-synthetic-data/9781492072737/ch04.html](https://www.oreilly.com/library/view/practical-synthetic-data/9781492072737/ch04.html)  
+- Image Reference: [O’Reilly Synthetic Data Image](https://www.oreilly.com/api/v2/epubs/9781492072737/files/assets/psdg_0405.png)
+
+**9. The Gradient - LLMs & Linguistics**  
+- Research: [https://thegradient.pub/what-do-llms-know-about-linguistics-it-depends-on-how-you-ask/](https://thegradient.pub/what-do-llms-know-about-linguistics-it-depends-on-how-you-ask/)  
+- Image Reference: [LLM Diagram Image](https://thegradient.pub/content/images/2023/07/llm_first_diagram.png)
+
+**10. JPMorgan - Synthetic Equity Market Data**  
+- Research: [https://www.jpmorgan.com/technology/artificial-intelligence/initiatives/synthetic-data/synthetic-equity-market-data](https://www.jpmorgan.com/technology/artificial-intelligence/initiatives/synthetic-data/synthetic-equity-market-data)  
+- Image Reference: [Synthetic Equity Market Image](https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/synthetic-equity.JPG)
+
+**11. JPMorgan - Customer Journey Event Data**  
+- Research: [https://www.jpmorgan.com/technology/artificial-intelligence/initiatives/synthetic-data/customer-journey-event](https://www.jpmorgan.com/technology/artificial-intelligence/initiatives/synthetic-data/customer-journey-event)  
+- Image Reference: [Customer Journey Event Image](https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/customer-journey-event-data.png)
+
+**12. Gretel AI - Synthetic Relational Databases**  
+- Research: [https://gretel.ai/blog/generate-synthetic-databases-with-gretel-relational](https://gretel.ai/blog/generate-synthetic-databases-with-gretel-relational)  
+- Image Reference: [Gretel Relational DB Image](https://cdn.prod.website-files.com/5ec4696a9b6d337d51632638/641c5aa0be3d60b7e1f76761_RelationalDB.webp)
+
 
 ---
 
