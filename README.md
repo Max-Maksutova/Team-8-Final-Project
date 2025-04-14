@@ -48,7 +48,8 @@ Artificially generated data that mimics the statistical properties of real data,
 **Benefits:**
 - Enhances data privacy
 - Reduces regulatory barriers
-- Supports scalable data augmentation  
+- Supports scalable data augmentation
+ 
 **Drawbacks:**
 - May exclude rare edge cases
 - Can introduce unrealistic patterns
