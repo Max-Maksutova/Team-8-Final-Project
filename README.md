@@ -1,4 +1,4 @@
-# Synthetic Data for Privacy-Preserving AI Development
+# Synthetic Data for Privacy-Preserving AI Development Project Report
 
 ---
 
