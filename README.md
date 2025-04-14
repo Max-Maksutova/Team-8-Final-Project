@@ -1,5 +1,4 @@
-# Synthetic Data for Privacy-Preserving AI Development
-**Project Report** 
+# Synthetic Data for Privacy-Preserving AI Development Project Report
 
 ---
 
@@ -16,7 +15,7 @@ Synthetic data is revolutionizing the way businesses handle data privacy, model 
 - [Max Maksutova](https://github.com/Max-Maksutova/Introduction/blob/main/README.md)  
 - [Mollie Schuma](https://github.com/mfschuma/About-Me-)  
 - [Nicole Sellers](https://github.com/nlsellers/Introduction)  
-- [Sarah Wozniak](https://github.com/danarepo)  
+- [Sarah Wozniak](https://github.com/sdwozniak) 
 
 ---
 
@@ -30,7 +29,7 @@ This project explores the **generation of synthetic data for enterprise applicat
 
 Our primary dataset examples center around **financial services and synthetic equity markets**, drawing from publicly available resources and research by **J.P. Morgan AI Research** and **Gretel.ai**.
 
-In addition, we used **vibe coding** (ie. prompting an AI to write and execute the creation of code) to build an interactive website on the subject of synthetic data  
+In addition, we used **vibe coding** (ie. prompting an AI to write and execute the creation of code) to build an [interactive website](https://claude.site/artifacts/6fed17d2-d4ca-49c2-9249-d985daef0bc4) on the subject of synthetic data.  
 
 ---
 
