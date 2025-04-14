@@ -187,7 +187,7 @@
 <h2 id="why-this-project-matters">🧠 Why This Project Matters</h2>
 <p>Synthetic data is revolutionizing the way businesses handle data privacy, model training, and cross-functional collaboration. By creating artificial datasets that maintain the statistical properties of real-world data, organizations can unlock innovation without breaching privacy or regulatory compliance.</p>
 <figure>
-<img src="https://www.k2view.com/hubfs/Synthetic%20data%20use%20cases.jpg" alt="Synthetic Data" /><figcaption aria-hidden="true">Synthetic Data</figcaption>
+<img src="https://www.k2view.com/hubfs/Synthetic%20data%20use%20cases.jpg" alt="Synthetic Data" />
 </figure>
 <hr />
 <h2 id="author-list">👥 Author List</h2>
@@ -199,7 +199,13 @@
 </ul>
 <hr />
 <h2 id="project-scope">🎯 Project Scope</h2>
-<p>This project explores the <strong>generation of synthetic data for enterprise applications</strong>, focusing specifically on: - Developing and comparing data generators (GANs, VAEs, LLMs) - Evaluating the utility of synthetic data using similarity metrics - Applying synthetic data to high-sensitivity industries (e.g., finance) - Emphasizing privacy-preservation, model utility, and responsible AI</p>
+<p>This project explores the <strong>generation of synthetic data for enterprise applications</strong>, focusing specifically on:</p>
+<ul>
+  <li>Developing and comparing data generators (GANs, VAEs, LLMs)</li>
+  <li>Evaluating the utility of synthetic data using similarity metrics</li>
+  <li>Applying synthetic data to high-sensitivity industries (e.g., finance)</li>
+  <li>Emphasizing privacy-preservation, model utility, and responsible AI</li>
+</ul>
 <p>Our primary dataset examples center around <strong>financial services and synthetic equity markets</strong>, drawing from publicly available resources and research by <strong>J.P. Morgan AI Research</strong> and <strong>Gretel.ai</strong>.</p>
 <p>
   In addition, we used <strong>vibe coding</strong> (i.e., prompting an AI to write and execute the creation of code) 
@@ -212,10 +218,31 @@
 <hr />
 <h2 id="project-details">🔍 Project Details</h2>
 <h3 id="what-is-synthetic-data">📊 What is Synthetic Data?</h3>
-<p>Artificially generated data that mimics the statistical properties of real data, used to replace or augment real-world datasets. <img src="https://dataingovernment.blog.gov.uk/wp-content/uploads/sites/46/2020/08/synthetic_data_image-1536x718.png" alt="exSyntheticData" /></p>
-<p><strong>Why is it important for businesses?</strong> - Real data is often sensitive, limited, or inaccessible. - Synthetic data enables: - Faster AI development - Cross-team collaboration without compliance risk - Innovation in regulated sectors</p>
-<p><strong>Benefits:</strong> - Enhances data privacy - Reduces regulatory barriers - Supports scalable data augmentation</p>
-<p><strong>Drawbacks:</strong> - May exclude rare edge cases - Can introduce unrealistic patterns - Hard to validate effectiveness</p>
+<p>Artificially generated data that mimics the statistical properties of real data, used to replace or augment real-world datasets. 
+  <img src="https://dataingovernment.blog.gov.uk/wp-content/uploads/sites/46/2020/08/synthetic_data_image-1536x718.png" alt="exSyntheticData" />
+</p>
+<p><strong>Why is it important for businesses?</strong></p>
+<ul>
+  <li>Real data is often sensitive, limited, or inaccessible.</li>
+  <li>Synthetic data enables:</li>
+  <ul>
+    <li>Faster AI development</li>
+    <li>Cross-team collaboration without compliance risk</li>
+    <li>Innovation in regulated sectors</li>
+  </ul>
+</ul>
+<p><strong>Benefits:</strong></p>
+<ul>
+  <li>Enhances data privacy</li>
+  <li>Reduces regulatory barriers</li>
+  <li>Supports scalable data augmentation</li>
+</ul>
+<p><strong>Drawbacks:</strong></p>
+<ul>
+  <li>May exclude rare edge cases</li>
+  <li>Can introduce unrealistic patterns</li>
+  <li>Hard to validate effectiveness</li>
+</ul>
 <hr />
 <h3 id="how-synthetic-data-is-generated">⚙️ How Synthetic Data is Generated</h3>
 <h4 id="analyze-real-data-optional">1. Analyze Real Data <em>(Optional)</em></h4>
@@ -224,17 +251,17 @@
 <h5 id="vae-variational-autoencoder"><strong>VAE (Variational Autoencoder)</strong></h5>
 <p>Encodes real data into low-dimensional space and decodes to reconstruct similar data.</p>
 <figure>
-<img src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/b6/f4/variational-autoencoder-neural-network.png" alt="VAE Diagram" /><figcaption aria-hidden="true">VAE Diagram</figcaption>
+<img src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/b6/f4/variational-autoencoder-neural-network.png" alt="VAE Diagram" />
 </figure>
 <h5 id="gan-generative-adversarial-network"><strong>GAN (Generative Adversarial Network)</strong></h5>
 <p>Two networks: generator vs. discriminator. Generator improves to fool the discriminator, leading to realistic outputs.</p>
 <figure>
-<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Y_AGVp0EEGEpB1Q25G6edQ.jpeg" alt="GAN Diagram" /><figcaption aria-hidden="true">GAN Diagram</figcaption>
+<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Y_AGVp0EEGEpB1Q25G6edQ.jpeg" alt="GAN Diagram" />
 </figure>
 <h5 id="llm-large-language-model"><strong>LLM (Large Language Model)</strong></h5>
 <p>Used for generating synthetic text data. Trained on large corpora to replicate real-world linguistic structures.</p>
 <figure>
-<img src="https://thegradient.pub/content/images/2023/07/llm_first_diagram.png" alt="LLM Diagram" /><figcaption aria-hidden="true">LLM Diagram</figcaption>
+<img src="https://thegradient.pub/content/images/2023/07/llm_first_diagram.png" alt="LLM Diagram" />
 </figure>
 <h4 id="create-compare">3. Create &amp; Compare</h4>
 <p>Generate synthetic data using your generator of choice. Then, analyze &amp; compare metrics between your original data and the synthetic data.</p>
@@ -246,7 +273,7 @@
 &gt; Ensure synthetic data reflects realistic variety</li>
 </ul>
 <figure>
-<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*xmtcfLquAbwFjvuN" alt="Overfitting vs Underfitting" /><figcaption aria-hidden="true">Overfitting vs Underfitting</figcaption>
+<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*xmtcfLquAbwFjvuN" alt="Overfitting vs Underfitting" />
 </figure>
 <hr />
 <h3 id="example-code-for-a-synthetic-data-generator-in-python">Example Code for a Synthetic Data Generator in Python</h3>
@@ -297,25 +324,24 @@ print(synthetic_data.head())
 
 # Optional: Save to CSV
 synthetic_data.to_csv(&#39;enhanced_synthetic_customer_data.csv&#39;, index=False)</code></pre>
-<p><strong>Example Output</strong></p>
 <hr />
 <h3 id="applications-examples">💼 Applications &amp; Examples</h3>
 <h4 id="anti-money-laundering-j.p.-morgan">🔐 Anti-Money Laundering (J.P. Morgan)</h4>
 <p>Synthetic sequences of banking actions (e.g., account opening, transfers, purchases)</p>
 <figure>
-<img src="https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/antimoney-laundering-data.png" alt="AML Dataset Visual" /><figcaption aria-hidden="true">AML Dataset Visual</figcaption>
+<img src="https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/antimoney-laundering-data.png" alt="AML Dataset Visual" />
 </figure>
 <h4 id="synthetic-equity-market-data">📈 Synthetic Equity Market Data</h4>
 <p>Simulated spot and option prices<br />
 - Based on Bloomberg market data<br />
 - Reconstructed using deep learning models</p>
 <figure>
-<img src="https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/synthetic-equity.JPG" alt="Market Dataset Visual" /><figcaption aria-hidden="true">Market Dataset Visual</figcaption>
+<img src="https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/synthetic-equity.JPG" alt="Market Dataset Visual" />
 </figure>
 <h4 id="customer-journey-events">🧾 Customer Journey Events</h4>
 <p>Sequences of retail banking actions like ATM withdrawals and app usage</p>
 <figure>
-<img src="https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/customer-journey-event-data.png" alt="Customer Journey Image" /><figcaption aria-hidden="true">Customer Journey Image</figcaption>
+<img src="https://www.jpmorgan.com/content/dam/jpm/cib/technology/banners/customer-journey-event-data.png" alt="Customer Journey Image" />
 </figure>
 <h4 id="gretel.ai-use-cases">🤖 Gretel.ai Use Cases:</h4>
 <ul>
@@ -326,7 +352,7 @@ synthetic_data.to_csv(&#39;enhanced_synthetic_customer_data.csv&#39;, index=Fals
 <li><strong>Synthetic Chat Conversations</strong></li>
 </ul>
 <figure>
-<img src="https://cdn.prod.website-files.com/5ec4696a9b6d337d51632638/641c5aa0be3d60b7e1f76761_RelationalDB.webp" alt="Gretel Data Samples" /><figcaption aria-hidden="true">Gretel Data Samples</figcaption>
+<img src="https://cdn.prod.website-files.com/5ec4696a9b6d337d51632638/641c5aa0be3d60b7e1f76761_RelationalDB.webp" alt="Gretel Data Samples" />
 </figure>
 <hr />
 <h2 id="whats-next">🔮 What’s Next?</h2>
