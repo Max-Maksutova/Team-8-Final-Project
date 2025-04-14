@@ -5,57 +5,66 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Python_Synthetic_Data_Using_Faker_Demo</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
+  /* General Styling */
   :root {
     --background: #ffffff;
-    --foreground: #002b5c; /* dark blue text */
-    --accent-light: #e6f0ff; /* light blue background */
-    --accent-medium: #007BFF; /* medium blue links/keywords */
-    --accent-dark: #004080; /* numbers & strong blue tones */
-    --comment: #6c757d; /* muted gray for comments */
-    --error: #b00020;
-    --code-bg: #f8faff;
-    --line-bg: #f0f8ff;
+    --foreground: #002b5c; /* Dark blue text */
+    --accent-light: #e6f0ff; /* Light blue background */
+    --accent-medium: #007BFF; /* Medium blue links/keywords */
+    --accent-dark: #004080; /* Strong blue tones */
+    --comment: #6c757d; /* Muted gray for comments */
+    --error: #b00020; /* Error color */
+    --code-bg: #f8faff; /* Background for code blocks */
+    --line-bg: #f0f8ff; /* Line number background */
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Georgia', serif; /* Matches webpage font */
     line-height: 1.6;
     margin: 2rem;
   }
 
-  a {
-    color: var(--accent-medium);
-    text-decoration: none;
+  h1 {
+    font-family: 'Georgia', serif; /* Matches webpage font */
+    color: var(--foreground); /* Dark blue title */
+    margin-top: 1.4em;
+    font-size: 2em;
   }
 
-  a:hover {
+  h1 a {
+    font-size: 0.8em;
+    color: var(--accent-medium);
+  }
+
+  h1 a:hover {
     text-decoration: underline;
   }
 
+  p {
+    color: var(--foreground);
+    margin: 1em 0;
+  }
+
+  /* Code block styling */
   pre {
     background-color: var(--code-bg);
     padding: 1em;
     border-radius: 6px;
     overflow: auto;
     border: 1px solid #d6e0f5;
+    color: var(--foreground);
   }
 
-  /* Line numbers */
+  /* Line number styling */
   td.linenos, span.linenos {
     color: #888;
     background-color: var(--line-bg);
     padding: 0 5px;
   }
 
-  td.linenos .special,
-  span.linenos.special {
-    background-color: var(--accent-light);
-    color: var(--foreground);
-  }
-
-  /* Highlighting Styles */
+  /* Syntax highlighting */
   .highlight {
     background: var(--code-bg);
     color: var(--foreground);
@@ -126,7 +135,7 @@
   .highlight .sr,
   .highlight .s1,
   .highlight .ss {
-    color: #0b5394; /* blue-toned string */
+    color: #0b5394; /* Blue-toned string */
   }
 
   .highlight .w {
