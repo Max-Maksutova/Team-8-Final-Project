@@ -6,40 +6,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Project Task Management</title>
   <style>
-    html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      word-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    a.button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-top: 20px;
-      font-size: 1rem;
-      background-color: #1a1a1a;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    a.button:hover {
-      background-color: #444;
-    }
-  </style>
+  :root {
+    --background: #ffffff;
+    --foreground: #002b5c; /* Dark blue text */
+    --accent-light: #e6f0ff; /* Light blue background */
+    --accent-medium: #007BFF; /* Medium blue links/keywords */
+    --accent-dark: #004080; /* Numbers & strong blue tones */
+    --comment: #6c757d; /* Muted gray for comments */
+    --button-bg: #004080; /* Blue button */
+    --button-hover-bg: #003366; /* Darker blue button on hover */
+    --button-text: #ffffff; /* Button text color */
+  }
+
+  html {
+    line-height: 1.5;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    color: var(--foreground);
+    background-color: var(--background);
+  }
+
+  body {
+    margin: 0 auto;
+    max-width: 36em;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    hyphens: auto;
+    word-wrap: break-word;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+  }
+
+  a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  a.button:hover {
+    background-color: var(--button-hover-bg);
+  }
+
+  /* Optional: Additional Styling for other elements */
+  a {
+    color: var(--accent-medium);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  p {
+    margin: 1em 0;
+    color: var(--foreground);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--foreground);
+  }
+
+  /* Links and headings inherit the accent color */
+  h1, h2, h3, h4, h5, h6, a {
+    color: var(--accent-medium);
+  }
+</style>
+
 </head>
 <body>
   <h1>Project Task Management</h1>
